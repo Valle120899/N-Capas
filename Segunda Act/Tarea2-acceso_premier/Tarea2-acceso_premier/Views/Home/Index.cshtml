@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<style type="text/css">
+    .jumbotron h1{
+        font-weight:bold
+    }
+    .jumbotron p {
+        font-weight: bold; 
+        color: rgb(173,43,43);
+    }
+    p{
+        font-size:Large;
+    }
+    .row a{
+        color:deepskyblue;
+        font-weight:bold;
+    }
+    .row{
+        padding-left:50px
+    }
+    .grid {
+        display: flex;
+        flex-wrap: nowrap;
+        align-content:space-around;
+        padding: 0 50px 0 50px
+    }
+
+</style>
+
+
+<div class="jumbotron">
+    
+    <div class="grid">
+        <img src="~/photos/corn.png" width="300" />
+        <div>
+            <h1>Bienvenido</h1>
+            <p>Sistema de mantenimiento de acceso premier</p>
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="grid">
+        <div>
+            <h2> <u> @Html.ActionLink("PERSONAS", "Index", "Personas")</u></h2>
+            <p>Mantenimiento para personas</p>
+        </div>
+        <div>
+            <h2> <u> @Html.ActionLink("ROLES", "Index", "Rols")</u></h2>
+            <p>Mantenimiento para Roles</p>
+        </div>
+        <div>
+            <h2> <u> @Html.ActionLink("PELICULAS", "Index", "Peliculas")</u></h2>
+            <p>Mantenimiento para peliculas</p>
+        </div>
+        <div>
+            <h2> <u> @Html.ActionLink("ACCESO PREMIER", "Index", "Acceso_Premier")</u></h2>
+            <p>Mantenimiento para acceso premier de películas</p>
+        </div>
+    </div>
+</div>

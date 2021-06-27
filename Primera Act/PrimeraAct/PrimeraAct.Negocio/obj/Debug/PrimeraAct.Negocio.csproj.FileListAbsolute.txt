@@ -1,0 +1,11 @@
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Negocio\bin\Debug\PrimeraAct.Negocio.dll
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Negocio\bin\Debug\PrimeraAct.Negocio.pdb
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Negocio\bin\Debug\PrimeraAct.Datos.dll
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Negocio\bin\Debug\PrimeraAct.Entidades.dll
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Negocio\bin\Debug\PrimeraAct.Datos.pdb
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Negocio\bin\Debug\PrimeraAct.Entidades.pdb
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Negocio\obj\Debug\PrimeraAct.Negocio.csprojAssemblyReference.cache
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Negocio\obj\Debug\PrimeraAct.Negocio.csproj.CoreCompileInputs.cache
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Negocio\obj\Debug\PrimeraAct.Negocio.csproj.CopyComplete
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Negocio\obj\Debug\PrimeraAct.Negocio.dll
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Negocio\obj\Debug\PrimeraAct.Negocio.pdb

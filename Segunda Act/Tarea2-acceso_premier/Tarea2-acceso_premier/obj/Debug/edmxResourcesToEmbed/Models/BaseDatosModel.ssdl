@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Tarea2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Acceso_Premier">
+    <Key>
+      <PropertyRef Name="Idapremier" />
+    </Key>
+    <Property Name="Idapremier" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre_pelicula" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="idPersona" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pelicula">
+    <Key>
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Duracion" Type="int" Nullable="false" />
+    <Property Name="Clasificacion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Estudio" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Director" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Genero" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Persona">
+    <Key>
+      <PropertyRef Name="Idpersona" />
+    </Key>
+    <Property Name="Idpersona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Edad" Type="int" Nullable="false" />
+    <Property Name="Telefono" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="Idrol" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="Idrol" />
+    </Key>
+    <Property Name="Idrol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_Asignatura">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="Persona" Type="Self.Persona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="Idrol" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="Idrol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Peli">
+    <End Role="Pelicula" Type="Self.Pelicula" Multiplicity="1" />
+    <End Role="Acceso_Premier" Type="Self.Acceso_Premier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pelicula">
+        <PropertyRef Name="Nombre" />
+      </Principal>
+      <Dependent Role="Acceso_Premier">
+        <PropertyRef Name="Nombre_pelicula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Persona">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="Acceso_Premier" Type="Self.Acceso_Premier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="Idpersona" />
+      </Principal>
+      <Dependent Role="Acceso_Premier">
+        <PropertyRef Name="idPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Tarea2ModelStoreContainer">
+    <EntitySet Name="Acceso_Premier" EntityType="Self.Acceso_Premier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pelicula" EntityType="Self.Pelicula" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Persona" EntityType="Self.Persona" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_Asignatura" Association="Self.fk_Asignatura">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Persona" EntitySet="Persona" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Peli" Association="Self.fk_Peli">
+      <End Role="Pelicula" EntitySet="Pelicula" />
+      <End Role="Acceso_Premier" EntitySet="Acceso_Premier" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Persona" Association="Self.fk_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="Acceso_Premier" EntitySet="Acceso_Premier" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

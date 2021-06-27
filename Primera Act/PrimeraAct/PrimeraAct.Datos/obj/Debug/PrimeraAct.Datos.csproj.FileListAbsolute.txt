@@ -1,0 +1,9 @@
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Datos\bin\Debug\PrimeraAct.Datos.dll
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Datos\bin\Debug\PrimeraAct.Datos.pdb
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Datos\bin\Debug\PrimeraAct.Entidades.dll
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Datos\bin\Debug\PrimeraAct.Entidades.pdb
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Datos\obj\Debug\PrimeraAct.Datos.csprojAssemblyReference.cache
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Datos\obj\Debug\PrimeraAct.Datos.csproj.CoreCompileInputs.cache
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Datos\obj\Debug\PrimeraAct.Datos.csproj.CopyComplete
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Datos\obj\Debug\PrimeraAct.Datos.dll
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Datos\obj\Debug\PrimeraAct.Datos.pdb

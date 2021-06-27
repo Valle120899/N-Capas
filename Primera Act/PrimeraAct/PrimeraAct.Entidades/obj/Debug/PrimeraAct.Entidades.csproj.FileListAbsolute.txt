@@ -1,0 +1,6 @@
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Entidades\bin\Debug\PrimeraAct.Entidades.dll
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Entidades\bin\Debug\PrimeraAct.Entidades.pdb
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Entidades\obj\Debug\PrimeraAct.Entidades.csprojAssemblyReference.cache
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Entidades\obj\Debug\PrimeraAct.Entidades.csproj.CoreCompileInputs.cache
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Entidades\obj\Debug\PrimeraAct.Entidades.dll
+C:\Users\rodri\Desktop\N capas\PrimeraAct\PrimeraAct.Entidades\obj\Debug\PrimeraAct.Entidades.pdb

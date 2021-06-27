@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Tarea2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Acceso_Premier">
+    <Key>
+      <PropertyRef Name="Idapremier" />
+    </Key>
+    <Property Name="Idapremier" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_pelicula" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idPersona" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Pelicula" Relationship="Self.fk_Peli" FromRole="Acceso_Premier" ToRole="Pelicula" />
+    <NavigationProperty Name="Persona" Relationship="Self.fk_Persona" FromRole="Acceso_Premier" ToRole="Persona" />
+  </EntityType>
+  <EntityType Name="Pelicula">
+    <Key>
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Duracion" Type="Int32" Nullable="false" />
+    <Property Name="Clasificacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Estudio" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Director" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Genero" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Acceso_Premier" Relationship="Self.fk_Peli" FromRole="Pelicula" ToRole="Acceso_Premier" />
+  </EntityType>
+  <EntityType Name="Persona">
+    <Key>
+      <PropertyRef Name="Idpersona" />
+    </Key>
+    <Property Name="Idpersona" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Edad" Type="Int32" Nullable="false" />
+    <Property Name="Telefono" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Idrol" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Acceso_Premier" Relationship="Self.fk_Persona" FromRole="Persona" ToRole="Acceso_Premier" />
+    <NavigationProperty Name="Rol" Relationship="Self.fk_Asignatura" FromRole="Persona" ToRole="Rol" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="Idrol" />
+    </Key>
+    <Property Name="Idrol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Estado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Persona" Relationship="Self.fk_Asignatura" FromRole="Rol" ToRole="Persona" />
+  </EntityType>
+  <Association Name="fk_Peli">
+    <End Role="Pelicula" Type="Self.Pelicula" Multiplicity="1" />
+    <End Role="Acceso_Premier" Type="Self.Acceso_Premier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pelicula">
+        <PropertyRef Name="Nombre" />
+      </Principal>
+      <Dependent Role="Acceso_Premier">
+        <PropertyRef Name="Nombre_pelicula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Persona">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="Acceso_Premier" Type="Self.Acceso_Premier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="Idpersona" />
+      </Principal>
+      <Dependent Role="Acceso_Premier">
+        <PropertyRef Name="idPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Asignatura">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="Persona" Type="Self.Persona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="Idrol" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="Idrol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Tarea2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Acceso_Premier" EntityType="Self.Acceso_Premier" />
+    <EntitySet Name="Pelicula" EntityType="Self.Pelicula" />
+    <EntitySet Name="Persona" EntityType="Self.Persona" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" />
+    <AssociationSet Name="fk_Peli" Association="Self.fk_Peli">
+      <End Role="Pelicula" EntitySet="Pelicula" />
+      <End Role="Acceso_Premier" EntitySet="Acceso_Premier" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Persona" Association="Self.fk_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="Acceso_Premier" EntitySet="Acceso_Premier" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Asignatura" Association="Self.fk_Asignatura">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Persona" EntitySet="Persona" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
